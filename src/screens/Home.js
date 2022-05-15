@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { View, Text, FlatList, TouchableWithoutFeedback } from 'react-native';
-import { Button, ActivityIndicator, Colors } from 'react-native-paper';
+import { Button, ActivityIndicator, Colors, FAB } from 'react-native-paper';
 import styles from '../styles/screenStyles';
 import { fetchProfiles, profilesSelector } from '../slices/profiles'
 
@@ -27,6 +27,14 @@ function HomeScreen({ navigation }) {
             />
         );
     };
+    const FabComponent = () => (
+        <FAB
+            style={styles.fab}
+            label='add profile'
+            icon="plus"
+            onPress={() => console.log('Pressed')}
+        />
+    );
     const renderProfiles = () => {
         if (loading) return <ActivityIndicator animating={true} color={Colors.red100} />
         if (hasErrors) return <Text>Cannot display profiles...</Text>
@@ -34,7 +42,7 @@ function HomeScreen({ navigation }) {
             data={profiles}
             ItemSeparatorComponent={renderSeparator}
             renderItem={({ item }) => (
-                <TouchableWithoutFeedback onPress={() => navigation.navigate('ViewDetail', {item})}>
+                <TouchableWithoutFeedback onPress={() => navigation.navigate('ViewDetail', { item })}>
                     <View style={styles.listItemView}>
                         <Text style={styles.listItemText}>{item.name}</Text>
                         <Text style={styles.listItemText2}>{item.email}</Text>
@@ -46,8 +54,7 @@ function HomeScreen({ navigation }) {
     return (
         <View style={styles.homeView}>
             {renderProfiles()}
-            {/* <Text>Home Screen</Text>
-            <Button onPress={() => navigation.navigate('AddDetail')}> Click for nav </Button> */}
+            {FabComponent()}
         </View>
     );
 }
