@@ -10,10 +10,6 @@ function ViewLocation({ route, navigation }) {
         latitudeDelta: 0.0922,
         longitudeDelta: 0.0421,
     });
-    console.log('location: ',location)
-    // useEffect(()=>{
-    //     setmapRegion({ latitude: location.lat, longitude: location.lng })
-    // })
     return (
         <View>
             <MapView
