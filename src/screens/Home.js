@@ -28,13 +28,13 @@ function HomeScreen({ navigation }) {
         );
     };
     const renderProfiles = () => {
-        if (loading) return <ActivityIndicator animating={true} color = {Colors.red100} />
+        if (loading) return <ActivityIndicator animating={true} color={Colors.red100} />
         if (hasErrors) return <Text>Cannot display profiles...</Text>
         return <FlatList
             data={profiles}
             ItemSeparatorComponent={renderSeparator}
             renderItem={({ item }) => (
-                <TouchableWithoutFeedback>
+                <TouchableWithoutFeedback onPress={() => navigation.navigate('ViewDetail', {item})}>
                     <View style={styles.listItemView}>
                         <Text style={styles.listItemText}>{item.name}</Text>
                         <Text style={styles.listItemText2}>{item.email}</Text>
