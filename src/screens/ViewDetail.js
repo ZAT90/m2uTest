@@ -155,8 +155,7 @@ function ViewDetail({ route, navigation }) {
             <ScrollView contentContainerStyle={{ alignItems: 'center' }} style={styles.addDetailView}>
                 <KeyboardAvoidingView
                     behavior={Platform.OS === "ios" ? "padding" : "height"}
-                    style={{ flex: 1 }}
-                >
+                    style={{ flex: 1 }}>
                     <View style={styles.viewDetailTopView}>
                         {isAddingProfile ? <View /> : <View style={styles.viewDetailImgView}>
                             <Image style={styles.image} source={{ uri: 'https://i.pravatar.cc/300' }} />
@@ -170,7 +169,6 @@ function ViewDetail({ route, navigation }) {
                                 required: {
                                     value: true,
                                     message: 'This is required'
-
                                 }
                             }}
                             name='Full Name'
@@ -185,7 +183,6 @@ function ViewDetail({ route, navigation }) {
                                 required: {
                                     value: true,
                                     message: 'This is required'
-
                                 }
                             }}
                             isAddingProfile={isAddingProfile}
@@ -199,7 +196,6 @@ function ViewDetail({ route, navigation }) {
                                 required: {
                                     value: true,
                                     message: 'Please input a valid phone number'
-
                                 }, validate: value => regexPhone.test(value)
                             }}
                             keyboardType='phone-pad'
@@ -213,7 +209,6 @@ function ViewDetail({ route, navigation }) {
                                 required: {
                                     value: true,
                                     message: 'Please input a valid email'
-
                                 }, validate: value => regexEmail.test(value)
                             }} keyboardType='email-address' isAddingProfile={isAddingProfile} name='Email' info={item.email} control={control} />
                         <ProfileInput
@@ -247,7 +242,6 @@ function ViewDetail({ route, navigation }) {
                                 required: {
                                     value: true,
                                     message: 'This is required'
-
                                 }
                             }} info={item.company.catchPhrase} control={control} />
                         <ProfileInput
@@ -260,7 +254,6 @@ function ViewDetail({ route, navigation }) {
                                 required: {
                                     value: true,
                                     message: 'This is required'
-
                                 }
                             }} info={item.company.bs} control={control} />
                         <View style={{ flexDirection: 'row', marginTop: 20 }}>
@@ -277,7 +270,6 @@ function ViewDetail({ route, navigation }) {
                                 required: {
                                     value: true,
                                     message: 'This is required'
-
                                 }
                             }} info={item.address.city} control={control} />
                         <ProfileInput
@@ -289,7 +281,6 @@ function ViewDetail({ route, navigation }) {
                                 required: {
                                     value: true,
                                     message: 'This is required'
-
                                 }
                             }} info={item.address.street} control={control} />
                         <ProfileInput inputRef={suiteInput}
@@ -301,7 +292,6 @@ function ViewDetail({ route, navigation }) {
                                 required: {
                                     value: true,
                                     message: 'This is required'
-
                                 }
                             }} info={item.address.zipcode} control={control} />
 
@@ -310,13 +300,14 @@ function ViewDetail({ route, navigation }) {
                 </KeyboardAvoidingView>
 
             </ScrollView>
-            {isAddingProfile ? <View style={styles.submitButton}>
-                <Button
-                    onPress={handleSubmit(onSubmit, onError)}
-                    title="Add New Profile"
-                    color={Colors.white}
-                    accessibilityLabel="Learn more about this purple button"
-                /></View> : <View />}
+            {isAddingProfile ?
+                <View style={styles.submitButton}>
+                    <Button
+                        onPress={handleSubmit(onSubmit, onError)}
+                        title="Add New Profile"
+                        color={Colors.white}
+                        accessibilityLabel="Learn more about this purple button" />
+                </View> : <View />}
 
 
         </View>
