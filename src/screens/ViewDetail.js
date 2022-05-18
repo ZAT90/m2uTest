@@ -150,7 +150,6 @@ function ViewDetail({ route, navigation }) {
                             <Image style={styles.image} source={{ uri: 'https://i.pravatar.cc/300' }} />
                         </View>}
                         <ProfileInput
-                            ref={fullNameRef}
                             isAddingProfile={isAddingProfile}
                             placeholder='Enter your full name'
                             rules={{
