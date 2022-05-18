@@ -20,10 +20,7 @@ const profilesSlice = createSlice({
             state.hasErrors = true
         },
         addNewProfile: (state, { payload }) => {
-             //let list = state.profiles;
-             state.profiles.push(payload);
-            // console.log('list: ',list);
-            // state.profiles = list
+            state.profiles.push(payload);
         }
     }
 })
@@ -37,12 +34,13 @@ export const profilesSelector = state => state.profiles
 // the reducer
 export default profilesSlice.reducer
 
+// call this function to load the profile list
 export function fetchProfiles() {
     return async dispatch => {
         dispatch(getProfiles())
         try {
             const response = await axios.get('https://jsonplaceholder.typicode.com/users');
-            console.log('api response: ', response.data);
+            //console.log('api response: ', response.data);
             dispatch(getProfilesSuccess(response.data))
 
 

@@ -10,6 +10,9 @@ const styles = StyleSheet.create({
   listItemView: { padding: 20, width },
   listItemText: { fontWeight: 'bold' },
   listItemText2: { marginTop: 5 },
+  viewProfile: { marginTop: 20 },
+  titleProfile: { flexDirection: 'row' },
+  disableStyle: { color: Colors.red, opacity: 1 },
   viewDetailTopView: { paddingBottom: 100, marginTop: 20 },
   viewDetailImgView: { alignItems: 'center', justifyContent: 'center' },
   viewDetailTitle: { marginLeft: 15, color: Colors.blue600 },
@@ -36,8 +39,11 @@ const styles = StyleSheet.create({
     right: 20,
     backgroundColor: Colors.blue600
   },
-  inputStyle: { height: 20, backgroundColor: Colors.white},
-  locationText: { color: Colors.blue600, fontWeight: 'bold' }
+  inputStyle: { height: 20, backgroundColor: Colors.white },
+  locationText: { color: Colors.blue600, fontWeight: 'bold' },
+  currentLocView: { marginTop: 20, height: 50 },
+  latLngView: { flexDirection: 'row', flex: 1, marginTop: 10, marginLeft: 15 },
+  latLngTextContainer: { flex: 0.5, flexDirection: 'row', }
 });
 
 export default styles;
