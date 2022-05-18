@@ -18,12 +18,18 @@ const profilesSlice = createSlice({
         getProfilesFailure: state => {
             state.loading = false
             state.hasErrors = true
+        },
+        addNewProfile: (state, { payload }) => {
+             //let list = state.profiles;
+             state.profiles.push(payload);
+            // console.log('list: ',list);
+            // state.profiles = list
         }
     }
 })
 
 // 3 actions generated
-export const { getProfiles, getProfilesSuccess, getProfilesFailure } = profilesSlice.actions
+export const { getProfiles, getProfilesSuccess, getProfilesFailure, addNewProfile } = profilesSlice.actions
 
 // selector
 export const profilesSelector = state => state.profiles
@@ -38,6 +44,8 @@ export function fetchProfiles() {
             const response = await axios.get('https://jsonplaceholder.typicode.com/users');
             console.log('api response: ', response.data);
             dispatch(getProfilesSuccess(response.data))
+
+
         } catch (error) {
             dispatch(getProfilesFailure())
 

@@ -10,6 +10,7 @@ import { DefaultTheme, Provider as PaperProvider } from 'react-native-paper';
 import HomeScreen from './src/screens/Home'
 import NavigationStack from './src/navigation';
 import rootReducer from './src/slices';
+//import { GestureHandlerRootView } from 'react-native-gesture-handler';
 
 const theme = {
   ...DefaultTheme,
@@ -25,9 +26,13 @@ const store = configureStore({ reducer: rootReducer });
 function App() {
   return (
      <StoreProvider store={store}>
+      
       <PaperProvider theme={theme}>
+      
         <NavigationStack />
+       
       </PaperProvider>
+      
      </StoreProvider>
   );
 }
