@@ -12,7 +12,7 @@ export default function NavigationStack() {
         <NavigationContainer>
             <Stack.Navigator screenOptions={{ headerBackTitleVisible: false }}>
                 <Stack.Screen name="Home" component={HomeScreen} />
-                <Stack.Screen name="ViewDetail" component={ViewDetail} />
+                <Stack.Screen name="ViewDetail" component={ViewDetail} options={({ route }) => ({ title: route.params.name })}/>
                 <Stack.Screen name="ViewLocation" component={ViewLocation} />
             </Stack.Navigator>
         </NavigationContainer>

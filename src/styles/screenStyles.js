@@ -10,10 +10,10 @@ const styles = StyleSheet.create({
   listItemView: { padding: 20, width },
   listItemText: { fontWeight: 'bold' },
   listItemText2: { marginTop: 5 },
-  viewDetailTopView: { paddingBottom: 40, marginTop: 20 },
+  viewDetailTopView: { paddingBottom: 100, marginTop: 20 },
   viewDetailImgView: { alignItems: 'center', justifyContent: 'center' },
   viewDetailTitle: { marginLeft: 15, color: Colors.blue600 },
-  viewDetailItem: { width: width - 20, minHeight: 40, borderRadius: 15, borderColor: 'black', borderWidth: 1, justifyContent: 'center', paddingLeft: 5, marginTop: 10 },
+  viewDetailItem: { width: width - 20, minHeight: 40, borderRadius: 15, borderColor: 'black', borderWidth: 1, justifyContent: 'center', paddingLeft: 15, marginTop: 10 },
   dividerView: { backgroundColor: Colors.blue600, height: 2, flex: 1, alignSelf: 'center' },
   fab: {
     position: 'absolute',
@@ -31,7 +31,7 @@ const styles = StyleSheet.create({
   },
   submitButton: {
     position: 'absolute',
-    bottom: 10,
+    bottom: 30,
     left: 20,
     right: 20,
     backgroundColor: Colors.blue600

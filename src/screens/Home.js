@@ -33,22 +33,15 @@ function HomeScreen({ navigation }) {
             "bs": ""
         }
     };
-    console.log('print this please')
-    console.log('profiles: ', profiles)
-    console.log('empty profile: ', item)
     useEffect(() => {
-        console.log('i am here')
         dispatch(fetchProfiles())
     }, [dispatch]);
     const renderSeparator = () => {
         return (
             <View
                 style={{
-                    height: 1,
-
-                    //width: "86%",
+                    height: 1,  
                     backgroundColor: '#CED0CE',
-                    //marginLeft: "14%"
                 }}
             />
         );
@@ -60,7 +53,7 @@ function HomeScreen({ navigation }) {
             style={styles.fab}
             label='add profile'
             icon="plus"
-            onPress={() => navigation.navigate('ViewDetail',{item, isAddingProfile: true, profiles } )}
+            onPress={() => navigation.navigate('ViewDetail',{item, isAddingProfile: true, profiles, name:'Add Profile' } )}
         />
     );
     const renderProfiles = () => {
@@ -70,7 +63,7 @@ function HomeScreen({ navigation }) {
             data={profiles}
             ItemSeparatorComponent={renderSeparator}
             renderItem={({ item }) => (
-                <TouchableWithoutFeedback onPress={() => navigation.navigate('ViewDetail', { item, isAddingProfile: false,profiles })}>
+                <TouchableWithoutFeedback onPress={() => navigation.navigate('ViewDetail', { item, isAddingProfile: false,profiles, name:'View Profile' })}>
             <View style={styles.listItemView}>
                 <Text style={styles.listItemText}>{item.username}</Text>
                 <Text style={styles.listItemText2}>{item.email}</Text>
